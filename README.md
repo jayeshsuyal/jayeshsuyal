@@ -1,8 +1,6 @@
 # Jayesh Suyal
 
-I work on inference systems—and the failures their benchmarks can hide.
-
-Verification engineer · Founder, InferenceAtlas
+**The model is only half the story. I work on the milliseconds.**
 
 ## Fixed upstream
 
@@ -35,18 +33,6 @@ I grouped MLflow diagnostic and hardware metrics under `system/`, preserving inf
 
 </details>
 
-## Open the work
-
-**[inferdrome](https://github.com/jayeshsuyal/inferdrome)**  
-[Run the synthetic local demo](https://github.com/jayeshsuyal/inferdrome/blob/main/docs/LOCAL_DEMO.md) · [Inspect the evidence-bundle design](https://github.com/jayeshsuyal/inferdrome/blob/main/docs/EVIDENCE_BUNDLE_V1.md)
-
-**[ablatrix](https://github.com/jayeshsuyal/ablatrix)**  
-[Inspect the 20-product evaluation](https://github.com/jayeshsuyal/ablatrix/blob/main/docs/evidence/paid-qa-batch-2026-09-28/report.md) · [Read the search ablation](https://github.com/jayeshsuyal/ablatrix/blob/main/docs/search-ablation.md)
-
-**[inferenceatlas-agent-demo](https://github.com/jayeshsuyal/inferenceatlas-agent-demo)** · historical hackathon demo  
-[Run the public demo](https://github.com/jayeshsuyal/inferenceatlas-agent-demo#try-it-in-60-seconds) · [Read the packet contract](https://github.com/jayeshsuyal/inferenceatlas-agent-demo/blob/main/docs/CONTRACT.md)
-
 ---
 
-Earlier: [neural accelerator verification](https://github.com/jayeshsuyal/2-neural-accelerator) · [RISC-V / UVM](https://github.com/jayeshsuyal/RISCV_Verification)  
-The story outside the code → [jayeshsuyal.dev](https://jayeshsuyal.dev/)
+[jayeshsuyal.dev](https://jayeshsuyal.dev/)
