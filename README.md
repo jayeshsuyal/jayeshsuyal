@@ -1,35 +1,52 @@
 # Jayesh Suyal
 
-**AI systems engineer building reliable decision and inference infrastructure.**
+I work on inference systems—and the failures their benchmarks can hide.
 
-I build products at the boundary between probabilistic models and deterministic systems: evaluation, provenance, cost and capacity decisions, verifiable artifacts, human-reviewed handoffs, and interfaces people can actually operate.
+Verification engineer · Founder, InferenceAtlas
 
-My engineering roots are in RTL and UVM verification. That background still shapes how I build AI systems today: define the contract, model the failure modes, preserve the evidence, and test the boundary.
+## Fixed upstream
 
-Based in **San Francisco**. Interested in AI infrastructure, product engineering, forward-deployed engineering, evaluation systems, and reliable agent platforms.
+Three merged contributions to [NVIDIA AI Dynamo's AIPerf](https://github.com/ai-dynamo/aiperf).
 
-## Current work
+<details open>
+<summary><strong>Three requests. Seventy-four reported completions.</strong></summary>
 
-### [InferenceAtlas](https://inferenceatlas.ai/)
+The counter was counting metric summaries instead of requests. I corrected the accounting and added regression tests for failures, cancellation, and warmup exclusion.
 
-InferenceAtlas is decision infrastructure for AI work before it moves. Its public proof surface demonstrates sealed decision packets, deterministic verification, missing-proof ownership, downstream guardrails, and zero-write safety boundaries.
+`completed_requests: 74 → 3` · [Read the fix · #1448 ↗](https://github.com/ai-dynamo/aiperf/pull/1448)
 
-- [Public engineering repository](https://github.com/jayeshsuyal/inferenceatlas-agent-demo)
-- Python, FastAPI, typed contracts, CLI tooling, offline evaluation gates, and browser-facing product surfaces
-- Deterministic authority layer with explicit human ownership—not model-generated approval
+</details>
 
-## Selected systems work
+<details>
+<summary><strong>The benchmark failed. The controller kept waiting.</strong></summary>
 
-- **[InferenceAtlas public proof surface](https://github.com/jayeshsuyal/inferenceatlas-agent-demo)** — packet authority, provenance, policy gates, evidence receipts, and verified handoffs for AI systems.
-- **[Two-layer neural accelerator verification](https://github.com/jayeshsuyal/2-neural-accelerator)** — UVM verification of a fixed-point inference accelerator with assertions and reference-model checks.
-- **[RISC-V subsystem verification](https://github.com/jayeshsuyal/RISCV_Verification)** — reusable UVM environment with scoreboards, coverage, error scenarios, and protocol checks.
+A terminal result with missing records was rejected during message parsing. I fixed the serialization boundary and a debug-logging failure, with regression coverage for failure propagation, cancellation, and shutdown.
 
-## What I work with
+[Read the fix · #1434 ↗](https://github.com/ai-dynamo/aiperf/pull/1434)
 
-`Python` · `FastAPI` · `React` · `TypeScript` · `AI evaluation` · `agent systems` · `provenance` · `inference economics` · `SystemVerilog` · `UVM`
+</details>
 
-## Engineering principle
+<details>
+<summary><strong>System diagnostics were mixed with inference metrics.</strong></summary>
 
-> Build. Verify. Ship. Explain.
+I grouped MLflow diagnostic and hardware metrics under `system/`, preserving inference metric names and adding regression tests and migration guidance.
 
-A model can propose. A deterministic system should preserve what happened, what remains uncertain, and what a human must decide next.
+[Read the change · #1447 ↗](https://github.com/ai-dynamo/aiperf/pull/1447)
+
+</details>
+
+## Open the work
+
+**[inferdrome](https://github.com/jayeshsuyal/inferdrome)**  
+[Run the synthetic local demo](https://github.com/jayeshsuyal/inferdrome/blob/main/docs/LOCAL_DEMO.md) · [Inspect the evidence-bundle design](https://github.com/jayeshsuyal/inferdrome/blob/main/docs/EVIDENCE_BUNDLE_V1.md)
+
+**[ablatrix](https://github.com/jayeshsuyal/ablatrix)**  
+[Inspect the 20-product evaluation](https://github.com/jayeshsuyal/ablatrix/blob/main/docs/evidence/paid-qa-batch-2026-09-28/report.md) · [Read the search ablation](https://github.com/jayeshsuyal/ablatrix/blob/main/docs/search-ablation.md)
+
+**[inferenceatlas-agent-demo](https://github.com/jayeshsuyal/inferenceatlas-agent-demo)** · historical hackathon demo  
+[Run the public demo](https://github.com/jayeshsuyal/inferenceatlas-agent-demo#try-it-in-60-seconds) · [Read the packet contract](https://github.com/jayeshsuyal/inferenceatlas-agent-demo/blob/main/docs/CONTRACT.md)
+
+---
+
+Earlier: [neural accelerator verification](https://github.com/jayeshsuyal/2-neural-accelerator) · [RISC-V / UVM](https://github.com/jayeshsuyal/RISCV_Verification)  
+The story outside the code → [jayeshsuyal.dev](https://jayeshsuyal.dev/)
