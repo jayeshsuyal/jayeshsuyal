@@ -1,38 +1,19 @@
 # Jayesh Suyal
 
-**The model is only half the story. I work on the milliseconds.**
+**Python/backend engineering · inference tooling · evaluation reliability**
 
-## Fixed upstream
+I build tools that make model-serving runs and product answers inspectable: what was requested, what happened, what evidence supports the result, and where the claim stops. [Portfolio](https://jayeshsuyal.dev/) · [LinkedIn](https://www.linkedin.com/in/jayeshs07)
 
-Three merged contributions to [NVIDIA AI Dynamo's AIPerf](https://github.com/ai-dynamo/aiperf).
+## Merged upstream: NVIDIA AI Dynamo AIPerf
 
-<details open>
-<summary><strong>Three requests. Seventy-four reported completions.</strong></summary>
+- [#1434 — Preserve terminal benchmark failures](https://github.com/ai-dynamo/aiperf/pull/1434): fixed missing-record parsing and debug logging so failures reach the controller.
+- [#1448 — Count completed requests from phase records](https://github.com/ai-dynamo/aiperf/pull/1448): corrected a case that reported 74 completions for 3 requests; added regression coverage.
+- [#1447 — Group MLflow diagnostics under `system/`](https://github.com/ai-dynamo/aiperf/pull/1447): separated system diagnostics from inference metrics with tests and migration guidance.
 
-The counter was counting metric summaries instead of requests. I corrected the accounting and added regression tests for failures, cancellation, and warmup exclusion.
+[Review the merged PRs upstream](https://github.com/ai-dynamo/aiperf/pulls?q=is%3Apr+is%3Amerged+author%3Ajayeshsuyal). As of 9 October 2026, [#1463](https://github.com/ai-dynamo/aiperf/pull/1463) and [#1464](https://github.com/ai-dynamo/aiperf/pull/1464) are **open PRs under review**.
 
-`completed_requests: 74 → 3` · [Read the fix · #1448 ↗](https://github.com/ai-dynamo/aiperf/pull/1448)
+## Selected projects
 
-</details>
-
-<details>
-<summary><strong>The benchmark failed. The controller kept waiting.</strong></summary>
-
-A terminal result with missing records was rejected during message parsing. I fixed the serialization boundary and a debug-logging failure, with regression coverage for failure propagation, cancellation, and shutdown.
-
-[Read the fix · #1434 ↗](https://github.com/ai-dynamo/aiperf/pull/1434)
-
-</details>
-
-<details>
-<summary><strong>System diagnostics were mixed with inference metrics.</strong></summary>
-
-I grouped MLflow diagnostic and hardware metrics under `system/`, preserving inference metric names and adding regression tests and migration guidance.
-
-[Read the change · #1447 ↗](https://github.com/ai-dynamo/aiperf/pull/1447)
-
-</details>
-
----
-
-[jayeshsuyal.dev](https://jayeshsuyal.dev/)
+- [Inferdrome](https://github.com/jayeshsuyal/inferdrome) — Python pipeline for repeatable vLLM/SGLang serving experiments and offline-checkable evidence. Its [A100 baseline](https://github.com/jayeshsuyal/inferdrome/blob/main/evidence/gpu/2026-08-23-qwen3-8b-a100-sxm4/README.md) is a bounded single-GPU result, not a capacity claim.
+- [Ablatrix](https://github.com/jayeshsuyal/ablatrix) — evidence-grounded product answers and a reviewer-driven revision loop. The [pinned paid batch](https://github.com/jayeshsuyal/ablatrix/blob/main/docs/evidence/paid-qa-batch-2026-09-28/report.md) records 20/20 completed calls and 52/52 exact citation-quote matches; no answer-quality gain has been established.
+- [ExitSpec](https://github.com/jayeshsuyal/ExitSpec) — Python acceptance workbench that freezes a criterion, checks evidence, and returns a scoped verdict. Its [guided example](https://github.com/jayeshsuyal/ExitSpec/blob/main/docs/DEMO_RUNBOOK.md) uses synthetic cases, not a customer benchmark.
